@@ -1,11 +1,13 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Holo's Alt Control"; -- the title (ofc)
+    Text = "Alt Detected, Loaded!"; -- what the text says (ofc)
+    Icon = ""; -- the image if u want. 
+    Duration = 69420999; -- how long the notification should in secounds
+})
 
+wait(0.2)
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 setfpscap(30)
-lp = game.Players.LocalPlayer
-lpu = lp.Name
-char = lp.Character
-hrp = char.HumanoidRootPart
-chrp = game.Players[_G.controller].Character.HumanoidRootPart
 local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
 local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
@@ -39,15 +41,15 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             wait(1)
             game.Players.LocalPlayer:Kick("Quitting..")
         elseif message == "?c" then
-            if lpu == alts.alt1 then
+            if lpu == _G.alt1 then
                 chat("alt 1")
-            elseif lpu == alts.alt2 then
+            elseif lpu == _G.alt2 then
                 chat("alt 2")
-            elseif lpu == alts.alt3 then
+            elseif lpu == _G.alt3 then
                 chat("alt 3")
-            elseif lpu == alts.alt4 then
+            elseif lpu == _G.alt4 then
                 chat("alt 4")
-            elseif lpu == alts.alt5 then
+            elseif lpu == _G.alt5 then
                 chat("alt 5")
             end
         elseif message == "?bring" then
@@ -70,7 +72,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
                 end
             end
             if game.Players:FindFirstChild(String) then
-                game.Players.LocalPlayer.Character.Humanoid:MoveTo(game.Players[String].Character.HumanoidRootPart.Position)
+                game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):MoveTo(game.Players[String].Character.HumanoidRootPart.Position)
             end
         elseif string.find(tostring(message), '?follow') then
             local String = message:gsub('?follow ', '')
@@ -82,7 +84,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             _G.follow = true
             while _G.follow == true do
                 if game.Players:FindFirstChild(String) then
-                    game.Players.LocalPlayer.Character.Humanoid:MoveTo(game.Players[String].Character.HumanoidRootPart.Position)
+                    game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):MoveTo(game.Players[String].Character.HumanoidRootPart.Position)
                 else
                     _G.follow = false
                     chat("Player left")
@@ -134,7 +136,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
                     ORBIT = game:GetService('RunService').Stepped:connect(function(t, dt)
                         if game.Players:FindFirstChild(String) then
                             rot = rot + dt * rotspeed
-                            hrp.CFrame = rotation * CFrame.new(sin(rot)*eclipse, 0, cos(rot)*radius) + game.Players[String].Character.HumanoidRootPart.Position
+                            game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = rotation * CFrame.new(sin(rot)*eclipse, 0, cos(rot)*radius) + game.Players[String].Character.HumanoidRootPart.Position
                         else
                             ORBIT:Disconnect()
                         end
@@ -144,28 +146,28 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         elseif message == "?unorbit" then
             ORBIT:Disconnect()
         elseif message == "?fling" then
-            a = Instance.new("BodyAngularVelocity", hrp); 
-            a.AngularVelocity = Vector3.new(0, 9999, 0); 
+            a = Instance.new("BodyAngularVelocity", game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")); 
+            a.AngularVelocity = Vector3.new(0, 1000, 0); 
             a.MaxTorque = Vector3.new(0,math.huge,0); 
             a.P = 1250
             a.Name = "Fling"
         elseif message == "?unfling" then
-            for i,v in pairs(hrp:GetChildren()) do
+            for i,v in pairs(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"):GetChildren()) do
                 if v.Name == "Fling" then
                     v:Destroy()
                 end
             end
         elseif message == "?lineup" then
-            if lpu == alts.alt1 then
-                hrp.CFrame = chrp.CFrame * CFrame.new(4, 0, 0)
-            elseif lpu == alts.alt2 then
-                hrp.CFrame = chrp.CFrame * CFrame.new(8, 0, 0)
-            elseif lpu == alts.alt3 then
-                hrp.CFrame = chrp.CFrame * CFrame.new(12, 0, 0)
-            elseif lpu == alts.alt4 then
-                hrp.CFrame = chrp.CFrame * CFrame.new(16, 0, 0)
-            elseif lpu == alts.alt5 then
-                hrp.CFrame = chrp.CFrame * CFrame.new(20, 0, 0)
+            if lpu == _G.alt1 then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(4, 0, 0)
+            elseif lpu == _G.alt2 then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(8, 0, 0)
+            elseif lpu == _G.alt3 then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(12, 0, 0)
+            elseif lpu == _G.alt4 then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(16, 0, 0)
+            elseif lpu == _G.alt5 then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(20, 0, 0)
             end
         elseif message == "?rejoin" then
             chat("Rejoining..")
@@ -175,11 +177,11 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         elseif message == "?jump" then
             char.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
         elseif message == "?reset" then
-            char.Humanoid.Health = 0
+            game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = 0
         elseif message == "?forcereset" then
-            char.Head:Destroy()
-            char.Humanoid.Health = 0
-            char.HumanoidRootPart:Destroy()
+            game.Players.LocalPlayer.Character:WaitForChild("Head"):Destroy()
+            game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = 0
+            game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"):Destroy()
         elseif message == "?sit" then
             char.Humanoid.Sit = true
         elseif message == "?credits" then
@@ -195,14 +197,14 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         elseif message == "?laugh" then
             game:GetService("Players"):Chat("/e laugh")
         elseif message == "?spin" then
-            a = Instance.new("BodyAngularVelocity", hrp); 
+            a = Instance.new("BodyAngularVelocity", game.Players.LocalPlayer.Character.HumanoidRootPart); 
             a.AngularVelocity = Vector3.new(0, 100, 0); 
             a.MaxTorque = Vector3.new(0,math.huge,0); 
             a.P = 1250
             a.Name = "Spin"
         elseif message == "?unspin" then
-            if hrp:FindFirstChild("Spin") then
-                hrp.Spin:Destroy()
+            if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"):FindFirstChild("Spin") then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Spin:Destroy()
             end
         elseif string.find(tostring(message), '?wings') then
             local String = message:gsub('?wings ', '')
@@ -213,43 +215,43 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             end
             wtf = Instance.new("Part", game.Workspace)
             wtf.Name = "aaa"
-            wtf.CFrame = hrp.CFrame
+            wtf.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
             wtf.Transparency = 1
 
             wait(0.1)
-            if lpu == alts.alt1 then
+            if lpu == _G.alt1 then
                 _G.wings = true
                 while _G.wings == true do
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(2, 2, 2)
-                    game.Workspace.aaa.CFrame = hrp.CFrame * CFrame.new(0, -3.6, 0)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(2, 2, 2)
+                    game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == alts.alt2 then
+            elseif lpu == _G.alt2 then
                 _G.wings = true
                 while _G.wings == true do
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(-2, 2, 2)
-                    game.Workspace.aaa.CFrame = hrp.CFrame * CFrame.new(0, -3.6, 0)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(-2, 2, 2)
+                    game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == alts.alt3 then
+            elseif lpu == _G.alt3 then
                 _G.wings = true
                 while _G.wings == true do
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(4, 4, 4)
-                    game.Workspace.aaa.CFrame = hrp.CFrame * CFrame.new(0, -3.6, 0)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(4, 4, 4)
+                    game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == alts.alt4 then
+            elseif lpu == _G.alt4 then
                 _G.wings = true
                 while _G.wings == true do
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(-4, 4, 4)
-                    game.Workspace.aaa.CFrame = hrp.CFrame * CFrame.new(0, -3.6, 0)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(-4, 4, 4)
+                    game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == alts.alt5 then
+            elseif lpu == _G.alt5 then
                 _G.wings = true
                 while _G.wings == true do
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(6, 6, 6)
-                    game.Workspace.aaa.CFrame = hrp.CFrame * CFrame.new(0, -3.6, 0)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(6, 6, 6)
+                    game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
             end
@@ -269,42 +271,42 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             end
             wtf = Instance.new("Part", game.Workspace)
             wtf.Name = "aab"
-            wtf.CFrame = hrp.CFrame
+            wtf.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
             wtf.Transparency = 1
 
-            if lpu == alts.alt1 then
+            if lpu == _G.alt1 then
                 _G.stack = true
                 while _G.stack == true do
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 5, 0)
-                    game.Workspace.aab.CFrame = hrp.CFrame * CFrame.new(0, -3.6, 0)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 5, 0)
+                    game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == alts.alt2 then
+            elseif lpu == _G.alt2 then
                 _G.stack = true
                 while _G.stack == true do
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 10, 0)
-                    game.Workspace.aab.CFrame = hrp.CFrame * CFrame.new(0, -3.6, 0)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 10, 0)
+                    game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == alts.alt3 then
+            elseif lpu == _G.alt3 then
                 _G.stack = true
                 while _G.stack == true do
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 15, 0)
-                    game.Workspace.aab.CFrame = hrp.CFrame * CFrame.new(0, -3.6, 0)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 15, 0)
+                    game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == alts.alt4 then
+            elseif lpu == _G.alt4 then
                 _G.stack = true
                 while _G.stack == true do
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 20, 0)
-                    game.Workspace.aab.CFrame = hrp.CFrame * CFrame.new(0, -3.6, 0)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 20, 0)
+                    game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == alts.alt5 then
+            elseif lpu == _G.alt5 then
                 _G.stack = true
                 while _G.stack == true do
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 25, 0)
-                    game.Workspace.aab.CFrame = hrp.CFrame * CFrame.new(0, -3.6, 0)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 25, 0)
+                    game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
             end
@@ -334,9 +336,9 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             _G.bang = true
             while _G.bang == true do
                 if game.Players:FindFirstChild(String) then
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 1)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 1)
                     task.wait(0.05)
-                    hrp.CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
                     task.wait(0.05)
                 else
                     _G.bang = false
@@ -347,10 +349,3 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         end
     end
 end)
-
-game.StarterGui:SetCore("SendNotification", {
-Title = "Holo's Alt Control"; -- the title (ofc)
-Text = "Alt Detected, Loaded!"; -- what the text says (ofc)
-Icon = ""; -- the image if u want. 
-Duration = 69420999; -- how long the notification should in secounds
-})

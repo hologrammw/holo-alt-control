@@ -1,11 +1,4 @@
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Holo's Alt Control"; -- the title (ofc)
-    Text = "Alt Detected, Loaded!"; -- what the text says (ofc)
-    Icon = ""; -- the image if u want. 
-    Duration = 69420999; -- how long the notification should in secounds
-})
 
-wait(0.2)
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 setfpscap(30)
 local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
@@ -175,7 +168,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             local ts = game:GetService("TeleportService")
             ts:Teleport(game.PlaceId, lp)
         elseif message == "?jump" then
-            char.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+            game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
         elseif message == "?reset" then
             game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = 0
         elseif message == "?forcereset" then
@@ -183,7 +176,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = 0
             game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"):Destroy()
         elseif message == "?sit" then
-            char.Humanoid.Sit = true
+            game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = true
         elseif message == "?credits" then
             chat("Made by hologram#(7273")
         elseif message == "?dance1" then
@@ -349,3 +342,10 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         end
     end
 end)
+
+game.StarterGui:SetCore("SendNotification", {
+Title = "Holo's Alt Control"; -- the title (ofc)
+Text = "Alt Detected, Loaded!"; -- what the text says (ofc)
+Icon = ""; -- the image if u want. 
+Duration = 69420999; -- how long the notification should in secounds
+})

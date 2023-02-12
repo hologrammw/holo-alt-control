@@ -347,3 +347,10 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         end
     end
 end)
+
+game.StarterGui:SetCore("SendNotification", {
+Title = "Holo's Alt Control"; -- the title (ofc)
+Text = "Alt Detected, Loaded!"; -- what the text says (ofc)
+Icon = ""; -- the image if u want. 
+Duration = 69420999; -- how long the notification should in secounds
+})

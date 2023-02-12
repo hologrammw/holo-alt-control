@@ -34,15 +34,15 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             wait(1)
             game.Players.LocalPlayer:Kick("Quitting..")
         elseif message == "?c" then
-            if lpu == _G.alt1 then
+            if game.Players.LocalPlayer.Name == alts.alt1 then
                 chat("alt 1")
-            elseif lpu == _G.alt2 then
+            elseif game.Players.LocalPlayer.Name == alts.alt2 then
                 chat("alt 2")
-            elseif lpu == _G.alt3 then
+            elseif game.Players.LocalPlayer.Name == alts.alt3 then
                 chat("alt 3")
-            elseif lpu == _G.alt4 then
+            elseif game.Players.LocalPlayer.Name == alts.alt4 then
                 chat("alt 4")
-            elseif lpu == _G.alt5 then
+            elseif game.Players.LocalPlayer.Name == alts.alt5 then
                 chat("alt 5")
             end
         elseif message == "?bring" then
@@ -151,15 +151,15 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
                 end
             end
         elseif message == "?lineup" then
-            if lpu == _G.alt1 then
+            if game.Players.LocalPlayer.Name == alts.alt1 then
                 game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(4, 0, 0)
-            elseif lpu == _G.alt2 then
+            elseif game.Players.LocalPlayer.Name == alts.alt2 then
                 game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(8, 0, 0)
-            elseif lpu == _G.alt3 then
+            elseif game.Players.LocalPlayer.Name == alts.alt3 then
                 game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(12, 0, 0)
-            elseif lpu == _G.alt4 then
+            elseif game.Players.LocalPlayer.Name == alts.alt4 then
                 game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(16, 0, 0)
-            elseif lpu == _G.alt5 then
+            elseif game.Players.LocalPlayer.Name == alts.alt5 then
                 game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(20, 0, 0)
             end
         elseif message == "?rejoin" then
@@ -212,35 +212,35 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             wtf.Transparency = 1
 
             wait(0.1)
-            if lpu == _G.alt1 then
+            if game.Players.LocalPlayer.Name == alts.alt1 then
                 _G.wings = true
                 while _G.wings == true do
                     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(2, 2, 2)
                     game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == _G.alt2 then
+            elseif game.Players.LocalPlayer.Name == alts.alt2 then
                 _G.wings = true
                 while _G.wings == true do
                     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(-2, 2, 2)
                     game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == _G.alt3 then
+            elseif game.Players.LocalPlayer.Name == alts.alt3 then
                 _G.wings = true
                 while _G.wings == true do
                     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(4, 4, 4)
                     game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == _G.alt4 then
+            elseif game.Players.LocalPlayer.Name == alts.alt4 then
                 _G.wings = true
                 while _G.wings == true do
                     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(-4, 4, 4)
                     game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == _G.alt5 then
+            elseif game.Players.LocalPlayer.Name == alts.alt5 then
                 _G.wings = true
                 while _G.wings == true do
                     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(6, 6, 6)
@@ -267,35 +267,35 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             wtf.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
             wtf.Transparency = 1
 
-            if lpu == _G.alt1 then
+            if game.Players.LocalPlayer.Name == alts.alt1 then
                 _G.stack = true
                 while _G.stack == true do
                     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 5, 0)
                     game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == _G.alt2 then
+            elseif game.Players.LocalPlayer.Name == alts.alt2 then
                 _G.stack = true
                 while _G.stack == true do
                     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 10, 0)
                     game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == _G.alt3 then
+            elseif game.Players.LocalPlayer.Name == alts.alt3 then
                 _G.stack = true
                 while _G.stack == true do
                     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 15, 0)
                     game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == _G.alt4 then
+            elseif game.Players.LocalPlayer.Name == alts.alt4 then
                 _G.stack = true
                 while _G.stack == true do
                     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 20, 0)
                     game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
-            elseif lpu == _G.alt5 then
+            elseif game.Players.LocalPlayer.Name == alts.alt5 then
                 _G.stack = true
                 while _G.stack == true do
                     game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 25, 0)

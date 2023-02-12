@@ -1,4 +1,4 @@
-if game.Players.LocalPlayer.Name == getgenv().controller then
+if game.Players.LocalPlayer.Name == _G.controller then
 
 	print("Ignoring, controller detected!")
 	
@@ -14,7 +14,7 @@ else
 	lpu = lp.Name
 	char = lp.Character
 	hrp = char.HumanoidRootPart
-	chrp = game.Players[getgenv().controller].Character.HumanoidRootPart
+	chrp = game.Players[_G.controller].Character.HumanoidRootPart
 	local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
 	local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 	for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
@@ -29,7 +29,7 @@ else
 	   local player = game.Players:FindFirstChild(message.FromSpeaker)
 	   local message = message.Message or ""
 	
-	   if player.Name == getgenv().controller then
+	   if player.Name == _G.controller then
 			if message == "?bk" then
 				chat("ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻")
 				chat("ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻ׁ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻")
@@ -60,7 +60,7 @@ else
                     chat("alt 5")
 				end
 			elseif message == "?bring" then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[getgenv().controller].Character.HumanoidRootPart.CFrame
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[_G.controller].Character.HumanoidRootPart.CFrame
 			elseif string.find(tostring(message), '?goto') then
 				local String = message:gsub('?goto ', '')
 				for i,v in pairs(game.Players:GetChildren()) do

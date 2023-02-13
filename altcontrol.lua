@@ -44,6 +44,16 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
                 chat("alt 4")
             elseif game.Players.LocalPlayer.Name == alts.alt5 then
                 chat("alt 5")
+            elseif game.Players.LocalPlayer.Name == alts.alt6 then
+                chat("alt 6")
+            elseif game.Players.LocalPlayer.Name == alts.alt7 then
+                chat("alt 7")
+            elseif game.Players.LocalPlayer.Name == alts.alt8 then
+                chat("alt 8")
+            elseif game.Players.LocalPlayer.Name == alts.alt9 then
+                chat("alt 9")
+            elseif game.Players.LocalPlayer.Name == alts.alt10 then
+                chat("alt 10")
             end
         elseif message == "?bring" then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[_G.controller].Character.HumanoidRootPart.CFrame
@@ -67,6 +77,18 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             if game.Players:FindFirstChild(String) then
                 game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):MoveTo(game.Players[String].Character.HumanoidRootPart.Position)
             end
+        elseif string.find(tostring(message), '?setfps') then
+            local String = message:gsub('?setfps ', '')
+            local intttt = tonumber(String)
+            if setfpscap then
+                chat("FPS Cap set to "..String)
+                setfpscap(intttt)
+            else
+                chat("Your exploit is GARBAGE, This means you can't use setfps command")
+            end
+        elseif string.find(tostring(message), '?chat') then
+            local String = message:gsub('?chat ', '')
+            chat(String)
         elseif string.find(tostring(message), '?follow') then
             local String = message:gsub('?follow ', '')
             for i,v in pairs(game.Players:GetChildren()) do
@@ -161,6 +183,16 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
                 game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(16, 0, 0)
             elseif game.Players.LocalPlayer.Name == alts.alt5 then
                 game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(20, 0, 0)
+            elseif game.Players.LocalPlayer.Name == alts.alt6 then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(24, 0, 0)
+            elseif game.Players.LocalPlayer.Name == alts.alt7 then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(28, 0, 0)
+            elseif game.Players.LocalPlayer.Name == alts.alt8 then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(32, 0, 0)
+            elseif game.Players.LocalPlayer.Name == alts.alt9 then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(36, 0, 0)
+            elseif game.Players.LocalPlayer.Name == alts.alt10 then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[_G.controller].Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(40, 0, 0)
             end
         elseif message == "?rejoin" then
             chat("Rejoining..")
@@ -247,6 +279,41 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
                     game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
+            elseif game.Players.LocalPlayer.Name == alts.alt6 then
+                _G.wings = true
+                while _G.wings == true do
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(-6, 6, 6)
+                    game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
+                    task.wait()
+                end
+            elseif game.Players.LocalPlayer.Name == alts.alt7 then
+                _G.wings = true
+                while _G.wings == true do
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(8, 8, 8)
+                    game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
+                    task.wait()
+                end
+            elseif game.Players.LocalPlayer.Name == alts.alt8 then
+                _G.wings = true
+                while _G.wings == true do
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(-8, 8, 8)
+                    game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
+                    task.wait()
+                end
+            elseif game.Players.LocalPlayer.Name == alts.alt9 then
+                _G.wings = true
+                while _G.wings == true do
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(10, 10, 10)
+                    game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
+                    task.wait()
+                end
+            elseif game.Players.LocalPlayer.Name == alts.alt10 then
+                _G.wings = true
+                while _G.wings == true do
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(-10, 10, 10)
+                    game.Workspace.aaa.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
+                    task.wait()
+                end
             end
         elseif message == "?nowings" then
             _G.wings = false
@@ -302,6 +369,41 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
                     game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
                     task.wait()
                 end
+            elseif game.Players.LocalPlayer.Name == alts.alt6 then
+                _G.stack = true
+                while _G.stack == true do
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0)
+                    game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
+                    task.wait()
+                end
+            elseif game.Players.LocalPlayer.Name == alts.alt7 then
+                _G.stack = true
+                while _G.stack == true do
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 35, 0)
+                    game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
+                    task.wait()
+                end
+            elseif game.Players.LocalPlayer.Name == alts.alt8 then
+                _G.stack = true
+                while _G.stack == true do
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 40, 0)
+                    game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
+                    task.wait()
+                end
+            elseif game.Players.LocalPlayer.Name == alts.alt9 then
+                _G.stack = true
+                while _G.stack == true do
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 45, 0)
+                    game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
+                    task.wait()
+                end
+            elseif game.Players.LocalPlayer.Name == alts.alt10 then
+                _G.stack = true
+                while _G.stack == true do
+                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players[String].Character.HumanoidRootPart.CFrame * CFrame.new(0, 50, 0)
+                    game.Workspace.aab.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0, -3.6, 0)
+                    task.wait()
+                end
             end
         elseif message == "?nostack" then
             _G.stack = false
@@ -344,8 +446,8 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
 end)
 
 game.StarterGui:SetCore("SendNotification", {
-Title = "Holo's Alt Control"; -- the title (ofc)
-Text = "Alt Detected, Loaded!"; -- what the text says (ofc)
-Icon = ""; -- the image if u want. 
-Duration = 69420999; -- how long the notification should in secounds
+    Title = "Holo's Alt Control";
+    Text = "Alt Detected, Loaded!";
+    Icon = ""; 
+    Duration = 69420999;
 })

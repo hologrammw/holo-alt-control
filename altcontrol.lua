@@ -441,6 +441,45 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             end
         elseif message == "?unbang" then
             _G.bang = false
+        elseif string.find(tostring(message), '?slur') then
+            local String = message:gsub('?slur ', '')
+            if String == "1" then
+                if game.Players.LocalPlayer.Name == alts.alt1 then
+                    chat("F")
+                elseif game.Players.LocalPlayer.Name == alts.alt2 then
+                    chat("U")
+                elseif game.Players.LocalPlayer.Name == alts.alt3 then
+                    chat("C")
+                elseif game.Players.LocalPlayer.Name == alts.alt4 then
+                    chat("K")
+                end
+            elseif String == "2" then
+                if game.Players.LocalPlayer.Name == alts.alt1 then
+                    chat("S")
+                elseif game.Players.LocalPlayer.Name == alts.alt2 then
+                    chat("T")
+                elseif game.Players.LocalPlayer.Name == alts.alt3 then
+                    chat("F")
+                elseif game.Players.LocalPlayer.Name == alts.alt4 then
+                    chat("U")
+                end
+            elseif String == "3" then
+                if game.Players.LocalPlayer.Name == alts.alt1 then
+                    chat("P")
+                elseif game.Players.LocalPlayer.Name == alts.alt2 then
+                    chat("U")
+                elseif game.Players.LocalPlayer.Name == alts.alt3 then
+                    chat("SS")
+                elseif game.Players.LocalPlayer.Name == alts.alt4 then
+                    chat("Y")
+                end
+            end
+        elseif message == "?removewhite" then
+            chat("Removing white screen, This might make you really lag.")
+            game:GetService("RunService"):Set3dRenderingEnabled(true)
+        elseif message == "?restorewhite" then
+            chat("Making the screen white again.")
+            game:GetService("RunService"):Set3dRenderingEnabled(false)
         end
     end
 end)

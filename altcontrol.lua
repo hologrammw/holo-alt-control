@@ -77,6 +77,25 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             if game.Players:FindFirstChild(String) then
                 game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):MoveTo(game.Players[String].Character.HumanoidRootPart.Position)
             end
+        elseif string.find(tostring(message), '?stare') then
+            local String = message:gsub('?stare ', '')
+            for i,v in pairs(game.Players:GetChildren()) do
+                if String == v.DisplayName then
+                    String = v.Name
+                end
+            end
+            _G.stareat = true
+            while _G.stareat == true do
+                if game.Players:FindFirstChild(String) then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.Torso.Position, game.Players[String].Character.Head)
+                else
+                    _G.stareat = false
+                    chat("Player left")
+                end
+                task.wait()
+            end
+        elseif message == "?unstare" then
+            _G.stareat = false
         elseif string.find(tostring(message), '?setfps') then
             local String = message:gsub('?setfps ', '')
             local intttt = tonumber(String)

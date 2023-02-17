@@ -129,7 +129,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             local String = message:gsub('?execute ', '')
 
             if loadfile then
-                loadfile(String)
+                loadfile(String)()
             else
                 chat("Your executor does not support loadfile, this means you can't use this command.")
             end

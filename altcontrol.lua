@@ -77,34 +77,6 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             if game.Players:FindFirstChild(String) then
                 game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):MoveTo(game.Players[String].Character.HumanoidRootPart.Position)
             end
-        elseif string.find(tostring(message), '?stare') then
-            local String = message:gsub('?stare ', '')
-            for i,v in pairs(game.Players:GetChildren()) do
-                if String == v.DisplayName then
-                    String = v.Name
-                end
-            end
-            _G.stareat = true
-            while _G.stareat == true do
-                if game.Players:FindFirstChild(String) then
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.Torso.Position, game.Players[String].Character.Head)
-                else
-                    _G.stareat = false
-                    chat("Player left")
-                end
-                task.wait()
-            end
-        elseif message == "?unstare" then
-            _G.stareat = false
-        elseif string.find(tostring(message), '?setfps') then
-            local String = message:gsub('?setfps ', '')
-            local intttt = tonumber(String)
-            if setfpscap then
-                chat("FPS Cap set to "..String)
-                setfpscap(intttt)
-            else
-                chat("Your exploit is GARBAGE, This means you can't use setfps command")
-            end
         elseif string.find(tostring(message), '?chat') then
             local String = message:gsub('?chat ', '')
             chat(String)
@@ -229,7 +201,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         elseif message == "?sit" then
             game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = true
         elseif message == "?credits" then
-            chat("Made by hologram#(7273")
+            chat("Made by hologram#(1337")
         elseif message == "?dance1" then
             game:GetService("Players"):Chat("/e dance1")
         elseif message == "?dance2" then
